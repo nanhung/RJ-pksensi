@@ -294,7 +294,7 @@ system.time(out <- solve_mcsim(x, mName = mName, params = params,
 
 After solving the equations under the same given condition, we can find that GNU MCSim has more than 10 times faster in computing performance than using \CRANpkg{deSolve}. In this case, we only focus on performing the global SA alone for generic PK model without additional comparison with experimental data. The next example will display and reproduce our previous published result \citep{fphar201800588} with full global SA workflow.
 
-# Acetaminophen-PBPK model
+# Example 2: Acetaminophen-PBPK model
 
 This section aims to apply global SA for APAP-PBPK model through \CRANpkg{pksensi}. The model describes the PK of parent APAP and its two metabolites glucuronide (APAP-G) and sulfate (APAP-S). The model code is included in this package in https://github.com/nanhung/pksensi/blob/master/tests/pbpk_apap.model and can generate through \code{pbpk\_apap\_model} function. We apply the global SA workflow to the original published model with 21 model parameters \citep{s13318-015-0253-x}. The descriptions of each parameter and the sampling range are list in Table \ref{tab:data}.
 
