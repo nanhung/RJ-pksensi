@@ -23,7 +23,6 @@ performing global SA and can create robust and reproducible results for
 decision making in pharmacokinetic model calibration.
 }
 
-% Any extra LaTeX you need in the preamble
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -490,10 +489,10 @@ out <- solve_fun(x, time = t, func = pbtk1cpt,
                  initState = initState, outnames = outputs)
 \end{Sinput}
 \begin{Soutput}
-  Starting time: 2019-10-18 21:18:21
+  Starting time: 2019-10-19 09:02:04
 \end{Soutput}
 \begin{Soutput}
-  Ending time: 2019-10-18 21:19:54
+  Ending time: 2019-10-19 09:03:35
 \end{Soutput}
 \end{Schunk}
 
@@ -698,14 +697,14 @@ system.time(out <- solve_fun(x, time = t,
                              outnames = outputs))
 \end{Sinput}
 \begin{Soutput}
-  Starting time: 2019-10-18 21:19:56
+  Starting time: 2019-10-19 09:03:36
 \end{Soutput}
 \begin{Soutput}
-  Ending time: 2019-10-18 21:21:29
+  Ending time: 2019-10-19 09:05:07
 \end{Soutput}
 \begin{Soutput}
      user  system elapsed 
-   92.958   0.457  93.474
+   90.115   0.007  90.138
 \end{Soutput}
 \end{Schunk}
 
@@ -738,7 +737,7 @@ system.time(out <- solve_mcsim(x, mName = mName, params = params,
                                condition = conditions))
 \end{Sinput}
 \begin{Soutput}
-  Starting time: 2019-10-18 21:21:30
+  Starting time: 2019-10-19 09:05:07
 \end{Soutput}
 \begin{Soutput}
   * Created input file "sim.in".
@@ -747,11 +746,11 @@ system.time(out <- solve_mcsim(x, mName = mName, params = params,
   Execute: ./mcsim.pbtk1cpt sim.in
 \end{Soutput}
 \begin{Soutput}
-  Ending time: 2019-10-18 21:21:32
+  Ending time: 2019-10-19 09:05:09
 \end{Soutput}
 \begin{Soutput}
      user  system elapsed 
-    1.882   0.199   2.067
+    1.604   0.096   1.685
 \end{Soutput}
 \end{Schunk}
 
@@ -974,7 +973,7 @@ out <- solve_mcsim(mName = mName, params = params, vars = vars,
                    rtol = 1e-7, atol = 1e-9)
 \end{Sinput}
 \begin{Soutput}
-  Starting time: 2019-10-18 21:21:33
+  Starting time: 2019-10-19 09:05:10
 \end{Soutput}
 \begin{Soutput}
   * Created input file "sim.in".
@@ -983,7 +982,7 @@ out <- solve_mcsim(mName = mName, params = params, vars = vars,
   Execute: ./mcsim.pbpk_apap sim.in
 \end{Soutput}
 \begin{Soutput}
-  Ending time: 2019-10-18 21:21:36
+  Ending time: 2019-10-19 09:05:12
 \end{Soutput}
 \end{Schunk}
 
@@ -1050,7 +1049,7 @@ out <- solve_mcsim(x, mName = mName,
                    rtol = 1e-7, atol = 1e-9)
 \end{Sinput}
 \begin{Soutput}
-  Starting time: 2019-10-18 21:21:37
+  Starting time: 2019-10-19 09:05:13
 \end{Soutput}
 \begin{Soutput}
   * Created input file "sim.in".
@@ -1059,7 +1058,7 @@ out <- solve_mcsim(x, mName = mName,
   Execute: ./mcsim.pbpk_apap sim.in
 \end{Soutput}
 \begin{Soutput}
-  Ending time: 2019-10-18 21:25:55
+  Ending time: 2019-10-19 09:09:04
 \end{Soutput}
 \end{Schunk}
 
@@ -1228,13 +1227,13 @@ manuscript and consultation.
     ggplot2~3.2.1, glue~1.3.1, grid~3.6.1, gtable~0.3.0,
     htmltools~0.3.6, knitr~1.25, labeling~0.3, lattice~0.20-38,
     lazyeval~0.2.2, magrittr~1.5, Matrix~1.2-17, mitools~2.4,
-    msm~1.6.7, munsell~0.5.0, mvtnorm~1.0-11, packrat~0.5.0,
-    pillar~1.4.2, pkgconfig~2.0.2, plyr~1.8.4, purrr~0.3.2,
-    R6~2.4.0, Rcpp~1.0.2, reshape~0.8.8, reshape2~1.4.3,
-    rlang~0.4.0, rmarkdown~1.15, rstudioapi~0.10, rticles~0.10,
-    scales~1.0.0, splines~3.6.1, stringi~1.4.3, stringr~1.4.0,
-    survey~3.36, survival~2.44-1.1, tibble~2.1.3,
-    tidyselect~0.2.5, tools~3.6.1, xfun~0.9, yaml~2.2.0
+    msm~1.6.7, munsell~0.5.0, mvtnorm~1.0-11, pillar~1.4.2,
+    pkgconfig~2.0.2, plyr~1.8.4, purrr~0.3.2, R6~2.4.0,
+    Rcpp~1.0.2, reshape~0.8.8, reshape2~1.4.3, rlang~0.4.0,
+    rmarkdown~1.15, rticles~0.10, scales~1.0.0, splines~3.6.1,
+    stringi~1.4.3, stringr~1.4.0, survey~3.36, survival~2.44-1.1,
+    tibble~2.1.3, tidyselect~0.2.5, tools~3.6.1, xfun~0.9,
+    yaml~2.2.0
 \end{itemize}
 
 \bibliography{RJreferences}

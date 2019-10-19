@@ -18,10 +18,7 @@ author:
     email:  wchiu@cvm.tamu.edu
 abstract: >
   We developed a package, named \CRANpkg{pksensi}, to make global sensitivity analysis (SA) more accessible in physiologically based kinetic modeling. This package can investigate both parameter uncertainty and sensitivity in pharmacokinetic models, including those with multivariate model outputs, such as multiple time-points and tissue compartments. We refined the extended Fourier Amplitude Sensitivity Test method for SA by adding a random phase-shift to analyze the statistical variability of the sensitivity index for each model parameter. Furthermore, it includes functions to check the convergence of the global SA results. Utilizing \CRANpkg{pksensi}, we successfully reproduced our previously published SA results of human physiologically based pharmacokinetic modeling for acetaminophen and its two primary metabolites. Overall, \CRANpkg{pksensi} improves the user experience of performing global SA and can create robust and reproducible results for decision making in pharmacokinetic model calibration.
-output:
-  rticles::rjournal_article:
-    includes:
-      in_header: preamble.tex
+output: rticles::rjournal_article
 ---
 
 # Introduction
@@ -69,7 +66,7 @@ The \CRANpkg{pksensi} package provides a useful function to solve ODEs in PK mod
 The uncertainty analysis is a crucial modeling process within SA. Sometimes, it is difficult to have informative data to set up the parameter distribution. A wider range for a parameter distribution might cause a numerical error at extreme values. On the other hand, narrower ranges might cause the incorrect calibrated result of the model parameter. The uncertainty analysis using Monte Carlo is an appropriate approach in the data-driven modeling process to address this problem. Before fitting the data to model, the Monte Carlo can be applied with the given distribution of model parameter to examine whether the experimental data are within the range of the distribution of model output. \CRANpkg{pksensi} also has a function that can link to GNU MCSim to conduct Monte Carlo analysis, which is built-into GNU MCSim and examine the simulation result. The general workflow of uncertainty and SA is illustrated in Figure \ref{fig:Workflow}.
 
 ```{r workflow, echo = FALSE, out.width = "100%", fig.cap = '\\label{fig:Workflow}Workflow for performing uncertainty and sensitivity analysis.'}
-knitr::include_graphics("/RJ-pksensi_files/diagram/Workflow.png")
+knitr::include_graphics("diagram/Workflow.png")
 ```
 
 ## Output visualization and decision support
