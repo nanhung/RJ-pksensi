@@ -4,7 +4,7 @@ library(httk)
 library(deSolve)
 
 # GNU MCSim installation --------------------------------------------------
-mcsim_install()
+#mcsim_install()
 
 # Example 1: One-compartment pbtk model ------------------------------------
 # Construct 1-cpt pbtk model for deSolve package
@@ -49,7 +49,6 @@ q.arg <- list(list(min = pars1comp$Vdist / 2, max = pars1comp$Vdist * 2),
               list(min = pars1comp$kgutabs / 2, max = pars1comp$kgutabs * 2),
               list(mean = pars1comp$BW, sd = 5))
 params <- c("vdist", "ke", "kgutabs", "BW")
-
 
 # Parameter matrix generation
 set.seed(1234)
@@ -102,8 +101,8 @@ for (j in c("ke", "kgutabs", "BW")){
 mtext("Parameter", SOUTH<-1, line=2, outer=TRUE)
 mtext("Ccompartment", WEST<-2, line=2, outer=TRUE)
 
-# Review data structure
-dim(out$y)
+# Review the dimensions of the data, c(evaluation, replication, time, variable)
+dim(out$y) 
 
 # Check result in console
 check(out, SI.cutoff = 0.05)
@@ -176,6 +175,7 @@ vars <- c("lnCPL_APAP_mcgL", "lnCPL_AG_mcgL", "lnCPL_AS_mcgL")
 # Set output time steps
 times <- seq(from = 0.1, to = 12.1, by = 0.2)
 
+# Uncertainty analysis ----------------------------------------------------
 set.seed(1111)
 out <- solve_mcsim(mName = mName, params = params, vars = vars,
                    monte_carlo = 1000, dist = dist, q.arg = q.arg, 
@@ -186,7 +186,7 @@ out <- solve_mcsim(mName = mName, params = params, vars = vars,
 head(APAP)
 
 # Figure 7 ----------------------------------------------------------------
-par(mfrow = c(1,3), mar = c(4,4,1,1))
+par(mfrow = c(1,3), mar = c(4,4,1,1), pch ="o")
 pksim(out, xlab = "Time (h)", ylab = "Conc. (ug/L)", main = "APAP")
 points(APAP$Time, log(APAP$APAP * 1000))
 pksim(out, vars = "lnCPL_AG_mcgL", xlab = "Time (h)", main = "APAP-G", 
@@ -195,7 +195,6 @@ points(APAP$Time, log(APAP$AG * 1000))
 pksim(out, vars = "lnCPL_AS_mcgL", xlab = "Time (h)", main = "APAP-S", 
       ylab = " ", legend = FALSE)
 points(APAP$Time, log(APAP$AS * 1000))
-
 
 # Generate parameter matrix
 set.seed(1234)
