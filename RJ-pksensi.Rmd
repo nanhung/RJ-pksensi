@@ -532,7 +532,7 @@ Overall, \CRANpkg{pksensi} provides comprehensive suite of features and function
 
 ## Code
 
-The source material for this paper is available at https://github.com/nanhung/pksensi-RJ.
+The source material for this paper is available at https://github.com/nanhung/RJ-pksensi.
 
 ## Acknowledgments
 
